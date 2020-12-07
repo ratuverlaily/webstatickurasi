@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <title>Hello, world!</title>
+    <style>
+        .ukuranlink{
+            font-size: 12px;
+        }
+        .judul1{
+            text-align: left;
+        }
+        .judul2{
+            text-align: right;
+        }
+        
+        .page{
+            position:absolute;
+            right:110px;
+            top  :90px;
+        }
+        
+        .pbuton{
+            position:absolute;
+            right:600px;
+            top  :60px;
+        }
+ 
+    </style>
+  </head>
+  <body>
+        <div class="container">
+            <h3 align='center'>Selamat Datang Di Web Static Kurasi</h3>
+            <button align='center' type="button" class="btn btn-primary pbuton" onclick="location.href='http://103.89.6.76/';">Kembali Ke Web APP</button>
+            <br/><br/>                      
+                  
+            <p>List Data Kurasi</p>
+            <div class="page">
+                <label for="cars">Halaman :</label>
+                <select name="cars" id="cars">
+                  <option value="1">1</option>
+                  <option value="1">2</option>                 
+                </select>
+            </div>
+            {% for person in data %}
+            <div class="list-group">
+                <a href="#" class="list-group-item">
+                  <h4 class="list-group-item-heading"><b>{{ person[4] }}</b></h4>
+                  <p class="list-group-item-text ukuranlink">{{ person[8][0] }}</br></p>
+                  <p class="judul1">( Pelajaran : {{ person[6] }}, Kelas :{{ person[5] }} )</p>
+                  <p class="judul2">{{ person[3] }}</p>
+                </a>                
+            </div> 
+            {% endfor %} 
+        </div>
+    
+  </body>
+</html>
